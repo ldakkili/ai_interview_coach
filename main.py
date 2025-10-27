@@ -1,16 +1,30 @@
-# This is a sample Python script.
+# This is a main file where the project execution starts .
+#Import the questions.py file into main file
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from questions import questions
+import random # random is a built-in python module
+
+# we need 2 methods , 1.main and 2.random
+# define a random function used to get question in a random way.
+#random.choice--> is a selecting a random question from the list and printing it.
+def show_random_question():
+    q = random.choice(questions)
+    print("Questions are: ",q)
+
+# In main function we call the defined random function if condition is true.
+def main():
+    print("Welcome to Python Interview practice!")
+    while True:
+        show_random_question()
+        user_input =input("Press Enter for next question or type exit to quit: ")
+        if user_input.lower()=="exit":
+            print("Thanks for practicing!See you soon bye 👋")
+            break
+
+# line ensures main will be executed only if file is executed directly.
+if __name__ =="__main__":
+    main()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
